@@ -1,6 +1,6 @@
 package com.example.notesapp.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import lombok.Builder;
 import lombok.Data;
@@ -11,5 +11,5 @@ public class Note {
   private int id;
   private String title;
   private String content;
-  private LocalDateTime createdAt;
+  private LocalDate createdAt;
 }

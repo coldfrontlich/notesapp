@@ -3,8 +3,11 @@ package com.example.notesapp.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.example.notesapp.model.Note;
 
+@Repository
 public class NoteDAO {
   private final List<Note> NOTES = new ArrayList<>();
 
@@ -41,7 +44,6 @@ public class NoteDAO {
 
 
   public void deleteNote(int id) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'deleteNote'");
+    NOTES.removeIf(note -> note.getId() == id);
   }
 }
