@@ -3,11 +3,12 @@ import EditNoteForm from './EditNoteForm'
 import '../styles/NoteItem.scss'
 
 
-const NoteItem = ({ note, onDelete }) => {
+const NoteItem = ({ note, onDelete, onUpdate }) => {
 	  const [isEditing, setIsEditing] = useState(false)
 
 		const handleUpdate = () => {
 			setIsEditing(false)
+      onUpdate()
 		}
 
   return (
@@ -18,7 +19,7 @@ const NoteItem = ({ note, onDelete }) => {
         <>
           <h3>{note.title}</h3>
           <p>{note.content}</p>
-          <small>{new Date(note.createdAt).toLocaleDateString()}</small>
+          <p>{new Date(note.createdAt).toLocaleDateString()}</p>
           <button onClick={() => setIsEditing(true)}>Редактировать</button>
           <button onClick={() => onDelete(note.id)}>Удалить</button>
         </>

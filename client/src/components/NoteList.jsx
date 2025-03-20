@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {getNotes, deleteNote} from '../api'
 import NoteItem from './NoteItem'
+import NoteForm from './NoteForm'
 import '../styles/NoteList.scss'
 
 const NoteList = () => {
@@ -8,7 +9,7 @@ const NoteList = () => {
 
   useEffect(() => {
     fetchNotes()
-  }, [notes])
+  }, [])
 
   const fetchNotes = async () => {
     const data = await getNotes();
@@ -23,6 +24,7 @@ const NoteList = () => {
   return (
 		<div className='note-list'>
 			<h2>Заметки</h2>
+			<NoteForm onNoteCreated={fetchNotes} />
 			{notes.map(note => (
 				<NoteItem
 					key={note.id}
