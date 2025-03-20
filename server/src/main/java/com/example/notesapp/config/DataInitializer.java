@@ -19,11 +19,10 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (noteRepository.count() == 0) {
-            Note initialNote = Note.builder()
-                    .title("Тестовая заметка")
-                    .content("Это тестовая заметка, созданная при запуске приложения")
-                    .createdAt(LocalDate.now())
-                    .build();
+            Note initialNote = new Note();
+            initialNote.setContent("Это тестовая заметка, созданная при запуске приложения");
+            initialNote.setTitle("Тестовая заметка");
+            initialNote.setCreatedAt(LocalDate.now());
             noteRepository.save(initialNote);
         }
     }

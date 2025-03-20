@@ -10,6 +10,7 @@ import com.example.notesapp.service.NoteService;
 
 import lombok.AllArgsConstructor;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("api/v1/notes")
+@CrossOrigin(origins = "http://localhost:3000")
 @AllArgsConstructor
 public class NoteController {
 
