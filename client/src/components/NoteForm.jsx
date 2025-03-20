@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { createNote } from '../api'
+import '../styles/NoteForm.scss'
 
 
 const NoteForm = ({ onNoteCreated }) => {
