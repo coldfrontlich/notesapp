@@ -38,17 +38,17 @@ public class NoteController {
   }
 
   @GetMapping("/{id}")
-  public Note findNoteById(@PathVariable int id) {
+  public Note findNoteById(@PathVariable Long id) {
     return noteService.findNoteById(id);
   }
 
-  @PutMapping("update")
-  public Note updateNote(@RequestBody Note note) {
-    return noteService.updateNote(note);
+  @PutMapping("update/{id}")
+  public Note updateNote(@PathVariable Long id,@RequestBody Note updatedNote) {
+    return noteService.updateNote(id,updatedNote);
   }
 
   @DeleteMapping("delete/{id}")
-  public void deleteNote(@PathVariable int id) {
+  public void deleteNote(@PathVariable Long id) {
     noteService.deleteNote(id);
   }
 }

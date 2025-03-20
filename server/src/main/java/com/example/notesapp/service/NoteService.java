@@ -10,7 +10,7 @@ public interface NoteService {
   
   List<Note> findAllNotes();
   Note createNote(Note note);
-  Note findNoteById(int id);
-  Note updateNote(Note note);
-  void deleteNote(int id);
+  Note findNoteById(Long id);
+  Note updateNote(Long id,Note updatedNote);
+  void deleteNote(Long id);
 }
